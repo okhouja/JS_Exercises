@@ -23,7 +23,11 @@ function wordConverter(arr) {
 
 console.log(wordConverter(str));
 
+console.log("======2nd_Assignment======toCamelCase====");
 
+// toCamelCase
+const toCamelCase = (str) => {
+  // cool_fun -> coolFun
   let strToArr = str.toLowerCase().split("_");
   let result = strToArr.map((item, i) =>
     1 > i ? item : item[0].toUpperCase() + item.slice(1)
@@ -32,6 +36,7 @@ console.log(wordConverter(str));
 };
 console.log(toCamelCase("cool_fun_things"));
 
+console.log("======3rd_Assignment======hackerSpeak====");
 const hackSpeak = (str) => {
   return str
     .toLowerCase()
@@ -55,4 +60,3 @@ const hackSpeak = (str) => {
     .join("");
 };
 console.log(hackSpeak("I like javaScript"));
-<
