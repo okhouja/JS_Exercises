@@ -25,9 +25,8 @@ console.log(wordConverter(str));
 
 console.log("======2nd_Assignment======toCamelCase====");
 
-// toCamelCase
+// 1st Way
 const toCamelCase = (str) => {
-  // cool_fun -> coolFun
   let strToArr = str.toLowerCase().split("_");
   let result = strToArr.map((item, i) =>
     1 > i ? item : item[0].toUpperCase() + item.slice(1)
@@ -35,6 +34,26 @@ const toCamelCase = (str) => {
   return result.join("");
 };
 console.log(toCamelCase("cool_fun_things"));
+// 2nd way
+const camelCase = (str) => {
+  let words = str.split("_");
+  console.log(words);
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i][0].toUpperCase() + words[i].substr(1).toLowerCase();
+  }
+
+  return words.join(" ");
+};
+console.log(camelCase("Coool_fUn_tHinG"));
+
+//3rd Way
+const Camel = (str) => {
+  const words = str.toLowerCase().split(" ");
+  console.log(words);
+  let result = words.map((item) => item[0].toUpperCase() + item.slice(1));
+  return result.join(" ");
+};
+console.log(Camel("iNterNet is an awEsome resource"));
 
 console.log("======3rd_Assignment======hackerSpeak====");
 const hackSpeak = (str) => {
@@ -60,3 +79,13 @@ const hackSpeak = (str) => {
     .join("");
 };
 console.log(hackSpeak("I like javaScript"));
+
+/*##### 1. Format your string
+
+- Write function named "_capitalizeFirstLetter_" that accepts a string as an argument. The function should convert the first character of each word to uppercase. **Example** _the quick brown fox_ → _The Quick Brown Fox_. Print your solution to the console.
+
+**Expected Output**
+
+```javascript
+capitalizeFirstLetter("hey there"); → `Hey There`
+``` */
