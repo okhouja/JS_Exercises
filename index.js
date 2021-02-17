@@ -73,7 +73,7 @@ const Camel = (str) => {
 console.log(Camel("iNterNet is an awEsome resource"));
 
 console.log("======3rd_Assignment======hackerSpeak====");
-// 1st way
+// 1st way *
 const hackSpeak = (str) => {
   return str
     .toLowerCase()
