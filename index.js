@@ -23,6 +23,23 @@ function wordConverter(arr) {
 
 console.log(wordConverter(str));
 
+const wordConv = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] += "er";
+  }
+  return arr;
+};
+console.log(wordConv(str));
+
+// 3rd Way
+const wordCon = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].concat("er");
+  }
+  return arr;
+};
+console.log(wordCon(str));
+
 console.log("======2nd_Assignment======toCamelCase====");
 
 // 1st Way
