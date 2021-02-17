@@ -140,10 +140,11 @@ const hackSpeaker = (str) => {
 
 console.log(hackSpeaker("i become a super coder"));
 console.log(hackSpeaker("hackerSpeak javascript"));
+console.log(hackSpeaker("javascript Awsome Jaaaaa its works"));
 
 // 4th Way
 
-const hs = (orig) => {
+const hackerSpeak4 = (orig) => {
   replacements = { a: "4", e: "3", i: "1", o: "0" };
   return Object.entries(replacements).reduce(
     (acc, el) => acc.replace(el[0], el[1]),
@@ -151,7 +152,25 @@ const hs = (orig) => {
   );
 };
 
-console.log(hs("life"));
-console.log(hs("air"));
-console.log(hs("none"));
-console.log(hs("javascript"));
+console.log(hackerSpeak4("life"));
+console.log(hackerSpeak4("air"));
+console.log(hackerSpeak4("none"));
+console.log(hackerSpeak4("javascript Awsome Jaaaaa its works"));
+
+// 5th Way
+
+const dictionary = {
+  a: 4,
+  e: 3,
+  i: 1,
+  o: 0,
+  s: 5,
+};
+
+function hackerSpeak5(str) {
+  return str.replace(/[aeios]/gi, (m) => dictionary[m]);
+  // it will return new, modified string
+}
+
+console.log(hackerSpeak5("become a coder"));
+console.log(hackerSpeak5("javascript Awsome Jaaaaa its works"));
