@@ -56,6 +56,7 @@ const Camel = (str) => {
 console.log(Camel("iNterNet is an awEsome resource"));
 
 console.log("======3rd_Assignment======hackerSpeak====");
+// 1st way
 const hackSpeak = (str) => {
   return str
     .toLowerCase()
@@ -79,6 +80,49 @@ const hackSpeak = (str) => {
     .join("");
 };
 console.log(hackSpeak("I like javaScript"));
+//2nd way
+const hackerSpeak = (str) => {
+  const lowerStr = str.toLowerCase();
+  const letters = lowerStr.split("");
+  const hackerSpeak = [];
+  for (let i = 0; i < letters.length; i++) {
+    switch (letters[i]) {
+      case "a":
+        letters[i] = "4";
+        break;
+      case "e":
+        letters[i] = "3";
+        break;
+      case "i":
+        letters[i] = "1";
+        break;
+      case "o":
+        letters[i] = "0";
+        break;
+      case "s":
+        letters[i] = "5";
+        break;
+      default:
+        letters[i];
+    }
+    hackerSpeak.push(letters[i]);
+  }
+  return hackerSpeak.join("");
+};
+
+console.log(hackerSpeak("become a coder"));
+
+// 3rd Way
+const hackSpeaker = (str) => {
+  const change = { a: 4, b: 3, i: 1, o: 0, s: 5 };
+  const speak = (letter) =>
+    change.hasOwnProperty(letter) ? change[letter] : letter;
+
+  return str.split("").map(speak).join("");
+};
+
+console.log(hackSpeaker("i become a super coder"));
+console.log(hackSpeaker("hackerSpeak javascript"));
 
 /*##### 1. Format your string
 
