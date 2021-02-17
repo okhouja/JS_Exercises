@@ -15,6 +15,7 @@ console.log("======1st_Assignment======Word Converter====");
 ```javascript
 ["smarter", "kinder", "sweeter", "smaller", "clearer"];
 ```*/
+// 1st Way
 let str = ["smart", "kind", "sweet", "small", "clear"];
 
 function wordConverter(arr) {
@@ -22,7 +23,7 @@ function wordConverter(arr) {
 }
 
 console.log(wordConverter(str));
-
+// 2nd Way
 const wordConv = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     arr[i] += "er";
@@ -132,8 +133,7 @@ console.log(hackerSpeak("become a coder"));
 // 3rd Way
 const hackSpeaker = (str) => {
   const change = { a: 4, b: 3, i: 1, o: 0, s: 5 };
-  const speak = (letter) =>
-    change.hasOwnProperty(letter) ? change[letter] : letter;
+  const speak = (el) => (change.hasOwnProperty(el) ? change[el] : el);
 
   return str.split("").map(speak).join("");
 };
@@ -141,12 +141,17 @@ const hackSpeaker = (str) => {
 console.log(hackSpeaker("i become a super coder"));
 console.log(hackSpeaker("hackerSpeak javascript"));
 
-/*##### 1. Format your string
+// 4th Way
 
-- Write function named "_capitalizeFirstLetter_" that accepts a string as an argument. The function should convert the first character of each word to uppercase. **Example** _the quick brown fox_ → _The Quick Brown Fox_. Print your solution to the console.
+const hs3 = (orig) => {
+  replacements = { a: "4", e: "3", i: "1", o: "0" };
+  return Object.entries(replacements).reduce(
+    (acc, el) => acc.replace(el[0], el[1]),
+    orig
+  );
+};
 
-**Expected Output**
-
-```javascript
-capitalizeFirstLetter("hey there"); → `Hey There`
-``` */
+console.log(hs3("life"));
+console.log(hs3("air"));
+console.log(hs3("none"));
+console.log(hs3("javascript"));
