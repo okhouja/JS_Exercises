@@ -1,4 +1,5 @@
 console.log("=== 1 ===== # Word without First Character # =======");
+
 /*                  # Word without First Character #
 
 Create a function that takes a word and returns the new word without including the first character.*/
@@ -55,6 +56,7 @@ function reverseCase2(str) {
 console.log(reverseCase2("hApPy vAlaNtIne"));
 
 console.log("=== 4 ===== # Hiding the Card Number # =======");
+
 /*               # Hiding the Card Number #
 Write a function that takes a credit card number and only displays the last four characters. The rest of the card number must be replaced by ************.
 Ensure you return a string.
@@ -88,3 +90,25 @@ console.log(cardHide3("5411874515519"));
 // 4th Way
 const cardHide4 = (card) => card.slice(-4).padStart(card.length, "*");
 console.log(cardHide4("5445677654546"));
+
+// 5th Way
+const cardHide5 = (str) =>
+  [...str].map((x, i) => (i < str.length - 4 ? (x = "*") : x)).join("");
+console.log(cardHide5("5148598496544"));
+
+// 6th Way
+function cardHide6(card) {
+  return (
+    card
+      .slice(0, card.length - 4)
+      .split("")
+      .map((el) => (el = "*"))
+      .join("") + card.slice(card.length - 4)
+  );
+}
+console.log(cardHide6("5458965461561"));
+
+// 7th Way
+const cardHide7 = (n) =>
+  Array(n.length - 4).fill`*`.join`` + n.substring(n.length - 4);
+console.log(cardHide6("4059847549881"));
