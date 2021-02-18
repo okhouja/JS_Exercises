@@ -1,7 +1,8 @@
 console.log("======1st_Assignment======Word Converter====");
 
-/* Word Converter
 
+/* Word Converter
+ 
 - Given an array of words, create a function named "_wordConverter_" which uses an array method to add _"er"_ to the end of each string in the array. Look at the expected output below. **Important**: Do **not** use a loop to complete this task. Print your solution to the console.
 
 **Array of words**
@@ -38,7 +39,8 @@ console.log(toCamelCase("cool_fun_things"));
 
 console.log("======3rd_Assignment======hackerSpeak====");
 // 1st way *
-const hackSpeak = (str) => {
+
+const hackerSpeak = (str) => {
   return str
     .toLowerCase()
     .split("")
@@ -60,4 +62,5 @@ const hackSpeak = (str) => {
     })
     .join("");
 };
-console.log(hackSpeak("I like javaScript"));
+console.log(hackerSpeak("I like javaScript"));
+
