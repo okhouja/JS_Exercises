@@ -1,6 +1,6 @@
 console.log("======1st_Assignment======Word Converter====");
 
-/* /*##### 3. Word Converter
+/* ##### 3. Word Converter
 
 - Given an array of words, create a function named "_wordConverter_" which uses an array method to add _"er"_ to the end of each string in the array. Look at the expected output below. **Important**: Do **not** use a loop to complete this task. Print your solution to the console.
 
@@ -75,7 +75,7 @@ console.log(Camel("iNterNet is an awEsome resource"));
 
 console.log("======3rd_Assignment======hackerSpeak====");
 // 1st way *
-const hackSpeak = (str) => {
+const hackerSpeak = (str) => {
   return str
     .toLowerCase()
     .split("")
@@ -97,9 +97,9 @@ const hackSpeak = (str) => {
     })
     .join("");
 };
-console.log(hackSpeak("I like javaScript"));
+console.log(hackerSpeak("I like javaScript"));
 //2nd way
-const hackerSpeak = (str) => {
+const hackerSpeak2 = (str) => {
   const lowerStr = str.toLowerCase();
   const letters = lowerStr.split("");
   const hackerSpeak = [];
@@ -131,16 +131,16 @@ const hackerSpeak = (str) => {
 console.log(hackerSpeak("become a coder"));
 
 // 3rd Way
-const hackSpeaker = (str) => {
+const hackerSpeaker3 = (str) => {
   const change = { a: 4, b: 3, i: 1, o: 0, s: 5 };
   const speak = (el) => (change.hasOwnProperty(el) ? change[el] : el);
 
   return str.split("").map(speak).join("");
 };
 
-console.log(hackSpeaker("i become a super coder"));
-console.log(hackSpeaker("hackerSpeak javascript"));
-console.log(hackSpeaker("javascript Awsome Jaaaaa its works"));
+console.log(hackerSpeaker3("i become a super coder"));
+console.log(hackerSpeaker3("hackerSpeak javascript"));
+console.log(hackerSpeaker3("javascript Awsome Jaaaaa its works"));
 
 // 4th Way
 
@@ -155,7 +155,7 @@ const hackerSpeak4 = (orig) => {
 console.log(hackerSpeak4("life"));
 console.log(hackerSpeak4("air"));
 console.log(hackerSpeak4("none"));
-console.log(hackerSpeak4("javascript Awsome Jaaaaa its works"));
+console.log(hackerSpeak4("javascript Awsome Jaaaaa its not working here"));
 
 // 5th Way
 
