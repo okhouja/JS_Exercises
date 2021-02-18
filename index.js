@@ -45,7 +45,7 @@ console.log(camelCase("Coool_fUn_tHinG"));
 console.log("======3rd_Assignment======hackerSpeak====");
 // 1st way *
 // in method_1
-//2nd way
+// 2nd way
 const hackerSpeak2 = (str) => {
   const lowerStr = str.toLowerCase();
   const letters = lowerStr.split("");
