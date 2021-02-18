@@ -20,6 +20,7 @@ javascript
 // in method_2
 
 // 3rd Way
+
 const wordCon = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     arr[i].concat("er");
@@ -52,6 +53,7 @@ console.log("======3rd_Assignment======hackerSpeak====");
 // in method_2
 
 // 3rd Way
+
 const hackerSpeaker3 = (str) => {
   const change = { a: 4, b: 3, i: 1, o: 0, s: 5 };
   const speak = (el) => (change.hasOwnProperty(el) ? change[el] : el);
