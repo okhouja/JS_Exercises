@@ -1,11 +1,12 @@
 console.log("======1st_Assignment======Word Converter====");
 
-/*  Word Converter
+/* Word Converter
 
 - Given an array of words, create a function named "_wordConverter_" which uses an array method to add _"er"_ to the end of each string in the array. Look at the expected output below. **Important**: Do **not** use a loop to complete this task. Print your solution to the console.
 
 **Array of words**
 
+javascript
 ["smart", "kind", "sweet", "small", "clear"];
 
 **Expected output**
@@ -16,63 +17,55 @@ javascript
 // 1st Way
 // in method_1
 // 2nd Way
+// in method_2
 
-const wordConv = (arr) => {
+// 3rd Way
+const wordCon = (arr) => {
   for (let i = 0; i < arr.length; i++) {
-    arr[i] += "er";
+    arr[i].concat("er");
   }
   return arr;
 };
-console.log(wordConv(str));
+console.log(wordCon(str));
 
 console.log("======2nd_Assignment======toCamelCase====");
 
 // 1st Way
 // in method_1
 // 2nd way
+// in method_2
 
-const camelCase = (str) => {
-  let words = str.split("_");
+// 3rd Way
+
+const Camel = (str) => {
+  const words = str.toLowerCase().split(" ");
   console.log(words);
-  for (let i = 0; i < words.length; i++) {
-    words[i] = words[i][0].toUpperCase() + words[i].substr(1).toLowerCase();
-  }
-
-  return words.join(" ");
+  let result = words.map((item) => item[0].toUpperCase() + item.slice(1));
+  return result.join(" ");
 };
-console.log(camelCase("Coool_fUn_tHinG"));
+console.log(Camel("iNterNet is an awEsome resource"));
 
 console.log("======3rd_Assignment======hackerSpeak====");
 // 1st way *
 // in method_1
 // 2nd way
-const hackerSpeak2 = (str) => {
-  const lowerStr = str.toLowerCase();
-  const letters = lowerStr.split("");
-  const hackerSpeak = [];
-  for (let i = 0; i < letters.length; i++) {
-    switch (letters[i]) {
-      case "a":
-        letters[i] = "4";
-        break;
-      case "e":
-        letters[i] = "3";
-        break;
-      case "i":
-        letters[i] = "1";
-        break;
-      case "o":
-        letters[i] = "0";
-        break;
-      case "s":
-        letters[i] = "5";
-        break;
-      default:
-        letters[i];
-    }
-    hackerSpeak.push(letters[i]);
-  }
-  return hackerSpeak.join("");
+// in method_2
+
+// 3rd Way
+const hackerSpeaker3 = (str) => {
+  const change = { a: 4, b: 3, i: 1, o: 0, s: 5 };
+  const speak = (el) => (change.hasOwnProperty(el) ? change[el] : el);
+
+  return str.split("").map(speak).join("");
 };
 
-console.log(hackerSpeak("become a coder"));
+console.log(hackerSpeaker3("i become a super coder"));
+console.log(hackerSpeaker3("hackerSpeak javascript"));
+console.log(hackerSpeaker3("javascript Awsome Jaaaaa its works"));
+
+// 4th Way
+// in main branch
+
+// 5th Way
+
+// in main branch
