@@ -112,3 +112,63 @@ console.log(cardHide6("5458965461561"));
 const cardHide7 = (n) =>
   Array(n.length - 4).fill`*`.join`` + n.substring(n.length - 4);
 console.log(cardHide6("4059847549881"));
+
+/*                      # Finding Nemo #
+
+You're given a string of words. You need to find the word "Nemo", and return a string like this: "I found Nemo at [the order of the word you find nemo]!".
+
+If you can't find Nemo, return "I can't find Nemo :(".
+
+Examples
+findNemo("I am finding Nemo !") ➞ "I found Nemo at 4!"
+
+findNemo("Nemo is me") ➞ "I found Nemo at 1!"
+
+findNemo("I Nemo am") ➞ "I found Nemo at 2!"
+Notes:
+! , ? . are always separated from the last word.
+Nemo will always look like Nemo, and not NeMo or other capital variations.
+Nemo's, or anything that says Nemo with something behind it, doesn't count as Finding Nemo.
+If there are multiple Nemo's in the sentence, only return for the first one */
+
+function findNemo(sentence) {
+  let a = sentence.split` `;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === "Nemo") {
+      return `"I found Nemo! at ${[i + 1]}`;
+    }
+  }
+
+  return `"I can't find Nemo :(`;
+}
+console.log(findNemo("I am finding Nemo !"));
+console.log(findNemo("I am finding Semo !"));
+
+// 2nd Way
+
+const findNemo2 = (sentence) => {
+  const index = sentence.split(" ").findIndex((e) => e === "Nemo");
+  return index >= 0 ? `I found Nemo at ${index + 1}!` : "I can't find Nemo :(";
+};
+
+console.log(findNemo2("I am finding Semo !"));
+console.log(findNemo2("I am finding Nemo !"));
+
+// 3rd Way
+const findNemo3 = (a) => {
+  let b = a.split` `.indexOf("Nemo") + 1;
+  return b ? `I found Nemo at ${b}!` : "I can't find Nemo :(";
+};
+console.log(findNemo3("I am finding Semo !"));
+console.log(findNemo3("I am finding Nemo !"));
+
+// 4th Way
+function findNemo4(sentence) {
+  if (sentence.includes("Nemo ")) {
+    return "I found Nemo at " + (sentence.split(" ").indexOf("Nemo") + 1) + "!";
+  } else {
+    return "I can't find Nemo :(";
+  }
+}
+console.log(findNemo4("I am finding Semo !"));
+console.log(findNemo4("I am finding Nemo !"));
