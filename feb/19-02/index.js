@@ -77,7 +77,9 @@ const correctTitle3 = (str) =>
     )
     .join(" ");
 
-console.log("=== 2 ===== # Game of Thrones: Character Titles # =======");
+console.log(
+  "=== 2 ===== # Return the Middle Character(s) of a String # ======="
+);
 
 /*              # Return the Middle Character(s) of a String #
 
@@ -127,3 +129,71 @@ function getMiddle4(str) {
 }
 console.log(getMiddle4("hello"));
 console.log(getMiddle4("gyfytfyhuoiuod"));
+
+console.log("=== 3 ===== # Reverse the Odd Length Words # =======");
+
+/* # Reverse the Odd Length Words #
+
+Given a string, reverse all the words which have odd length. The even length words are not changed.
+
+Examples
+reverseOdd("Bananas") ➞ "sananaB"
+
+reverseOdd("One two three four") ➞ "enO owt eerht four"
+
+reverseOdd("Make sure uoy only esrever sdrow of ddo length")
+➞ "Make sure you only reverse words of odd length"
+Notes
+There is exactly one space between each word and no punctuation is used. */
+
+// 1st Way
+
+function reverseOdd(str) {
+  return str
+    .split(" ")
+    .map((w) => (w.length % 2 ? [...w].reverse().join("") : w))
+    .join(" ");
+}
+
+console.log(reverseOdd("One two three four"));
+
+// 2nd way
+
+function reverseOdd2(str) {
+  const splitted = str.split(" ");
+  return splitted
+    .map((item) => {
+      if (item.length % 2 !== 0) {
+        return item.split("").reverse().join("");
+      } else {
+        return item;
+      }
+    })
+    .join(" ");
+}
+console.log(reverseOdd2("Bananas"));
+console.log(reverseOdd2("One two three four"));
+console.log(reverseOdd2("Make sure uoy only esrever sdrow of ddo length"));
+
+// 3rd Way
+
+function reverseOdd3(str) {
+  return str
+    .split(" ")
+    .map((word) =>
+      word.length % 2 === 0 ? word : word.split("").reverse().join("")
+    )
+    .join(" ");
+}
+console.log(reverseOdd3("Bananas"));
+console.log(reverseOdd3("One two three four"));
+console.log(reverseOdd3("Make sure uoy only esrever sdrow of ddo length"));
+
+// 4th Way
+const reverseArr = (str) => str.split("").reverse().join("");
+const reverseOdd4 = (str) =>
+  str
+    .split(" ")
+    .map((item) => (item.length % 2 !== 0 ? reverseArr(item) : item))
+    .join(" ");
+console.log(reverseOdd4("Make sure uoy only esrever sdrow of ddo length"));
