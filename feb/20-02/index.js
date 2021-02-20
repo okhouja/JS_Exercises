@@ -7,6 +7,7 @@ console.log("=== 1 ===== # Format your string # =======");
 **Expected Output**
 
 capitalizeFirstLetter("hey there"); → `Hey There` */
+
 // 1st Way
 const capitalizeFirstLetter = (str) => {
   let words = str.split(" ");
@@ -23,7 +24,7 @@ console.log(capitalizeFirstLetter("the quick brown fox"));
 // 2nd Way
 const capitalizeFirstLetter2 = (str) => {
   return str.toLowerCase().split` `.map(
-    (el) => el.charAt(0).toUpperCase() + el.substr(1)
+    (w) => w.charAt(0).toUpperCase() + w.substr(1)
   ).join` `;
 };
 
@@ -114,12 +115,48 @@ const createGrid2 = (size, char) => {
 };
 console.log(createGrid2(3, "*"));
 
-let a = [1, 4, 46, 76];
-let b = new Array(a).fill(new Array(a));
-console.log(b);
-
 // 3rd Way
 
 const createGrid3 = (size, char) => Array(size).fill(Array(size).fill(char));
 
-console.log(createGrid3(3, "*"));
+console.log(createGrid3(3, "^"));
+
+// 4th Way
+
+const createGrid4 = (size, char) =>
+  Array(size)
+    .fill()
+    .map(() => Array(size).fill(char));
+console.log(createGrid4(3, "*"));
+
+console.log("=== 4 ===== # Matrix # =======");
+
+// Matrix
+
+function matrix(rows, cols, defaultValue) {
+  var arr = [];
+
+  // Creates all lines:
+  for (var i = 0; i < rows; i++) {
+    // Creates an empty line
+    arr.push([]);
+
+    // Adds cols to the empty line:
+    arr[i].push(new Array(cols));
+
+    for (var j = 0; j < cols; j++) {
+      // Initializes:
+      arr[i][j] = defaultValue;
+    }
+  }
+
+  return arr;
+}
+console.log(matrix(3, 2, 6));
+
+// 2nd Way
+const matrix2 = (size, char, val) =>
+  Array(size)
+    .fill()
+    .map(() => Array(char).fill(val));
+console.log(matrix2(3, 4, 4));
