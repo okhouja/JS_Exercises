@@ -160,3 +160,93 @@ const matrix2 = (size, char, val) =>
     .fill()
     .map(() => Array(char).fill(val));
 console.log(matrix2(3, 4, 4));
+
+console.log("=== 5 ===== # Reverse the Case # =======");
+
+/*                        # Reverse the Case #
+
+Given a string, create a function to reverse the case. All lower-cased letters should be upper-cased, and vice versa.
+
+Examples
+reverseCase("Happy Birthday") ➞ "hAPPY bIRTHDAY"
+
+reverseCase("MANY THANKS") ➞ "many thanks"
+
+reverseCase("sPoNtAnEoUs") ➞ "SpOnTaNeOuS" */
+
+function reverseCase(str) {
+  return str
+    .split("")
+    .map((a) => (a == a.toLowerCase() ? a.toUpperCase() : a.toLowerCase()))
+    .join("");
+}
+console.log(reverseCase("hApPy bIrThdAy"));
+
+// 2nd Way
+function reverseCase(str) {
+  let a = str.split("");
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === a[i].toUpperCase()) {
+      a[i] = a[i].toLowerCase();
+    } else if (a[i] === a[i].toLowerCase()) {
+      a[i] = a[i].toUpperCase();
+    }
+  }
+  return a.join("");
+}
+console.log(reverseCase("hApPy bIrThDaY mAn"));
+
+console.log("=== 6 ===== # Validation # =======");
+
+/*                              # Validation #
+
+- Look at the unit tests for validating a pin. Create a function named "_validPin_" that fulfills the requirements of the tests.
+
+**Requirements**:
+
+- The pin code must consist of only numbers.
+- The pin code must be 4 digits long.
+- The pin should have at least **two** different digits.
+- The pin code's last digit should be even.
+- The pin code should add up to at least 5.  ????
+
+The function should print `true` if the pin meets all the requirements and `false` if it does not. Print your solution to the console. */
+
+function validPin(pinCode) {
+  const number = Number(pinCode);
+  //checks if pin is not a number
+  if (isNaN(number)) {
+    return false;
+  }
+
+  const pinSplit = pinCode.split("");
+  const lengthOfPin = 4;
+  //checks pin length
+  if (pinSplit.length !== lengthOfPin) {
+    return false;
+  }
+  //checks if last value is odd or even
+  if (parseInt(pinCode[lengthOfPin - 1]) % 2 !== 0) {
+    return false;
+  }
+  let result = 0;
+  let checkIdenticalNumbers = []; // ????
+  for (let i = 0; i < pinSplit.length; i++) {
+    result += parseInt(pinSplit[i]);
+    if (pinSplit[0] !== pinSplit[i]) {
+      checkIdenticalNumbers.push(pinSplit[i]);
+    }
+  }
+  //checks if all numbers are identical
+  if (checkIdenticalNumbers.length === 0) {
+    return false;
+  }
+  //checks if total value of pin is less than 5
+  if (result < 5) {
+    return false;
+  }
+  return true;
+}
+console.log(validPin("1100"));
+console.log(validPin("1230"));
+console.log(validPin("hifi"));
